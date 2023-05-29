@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>Мои заметки</title>
+</head>
+<body>
+    <div class="container notes-container">
+        <div class="check-list-title">Чек-лист</div>
+
+        <section class="check-list">
+            {% for note in all_notes %}
+                <div class="check-list-item">
+                    <img class="check-list-item-img" src="{{note.promo}}" alt="promo">
+                    <div class="check-list-item-text">
+                        <h2>{{note.title}}</h2>
+                        <p><b>Режиссёр: </b>{{note.director}}</p>
+                        <p><b>Жанр: </b>{{note.genre}}</p>
+                        <p><b>Мнение: </b>"{{note.feedback}}"</p>
+                    </div>
+                </div>
+            {% endfor %}
+            <a class="main-screen-btn adding-screen-btn-to-home" href="{% url 'main' %}">На главную</a>
+        </section>
+
+    </div><!— container —>
+</body>
+</html>
