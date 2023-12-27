@@ -1,0 +1,28 @@
+
+{% load static %}
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>sheronov</title>
+</head>
+<body>
+    <div class="container">
+        <canvas id="canvas" width="390px" height="687px"></canvas>
+        <div class="colors">
+            <button class="color-btn black-btn" id="black" onclick="submitButton(this)"></button>
+            <button class="color-btn red-btn" id="red" onclick="submitButton(this)"></button>
+            <button class="color-btn green-btn" id="green" onclick="submitButton(this)"></button>
+            <button class="color-btn blue-btn" id="blue" onclick="submitButton(this)"></button>
+        </div>
+        <div class="reset-btn">
+            <a href="{% url 'main' %}">очистить</a>
+        </div>
+    </div>
+
+    <script src="{% static '/js/logic.js' %}"></script>
+</body>
+</html>
